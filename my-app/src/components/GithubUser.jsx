@@ -11,6 +11,16 @@ class GithubUser extends React.Component {
     error: ""
   };
 
+  // componentDidMount to get the axios to get data from github api
+  componentDidMount() {
+    axios
+      .get("https://api.github.com/users/")
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
     return (
       <div>
