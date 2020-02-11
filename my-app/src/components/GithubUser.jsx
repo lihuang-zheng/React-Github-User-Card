@@ -7,6 +7,10 @@ import UserCard from "./UserCard";
 // import axios to grab data from api
 import axios from "axios";
 
+// import material ui for the github
+import Container from "@material-ui/core/Container";
+
+// class component structure
 class GithubUser extends React.Component {
   //use state for constructor
   state = {
@@ -44,16 +48,16 @@ class GithubUser extends React.Component {
   // render user and user's follower on the page.
   render() {
     return (
-      <div>
+      <Container maxWidth="lg">
         <header className="Git-header">
           <h1>My Github.</h1>
         </header>
 
-        <div className="container">
+        <main>
           <UserCard user={this.state.user} />
           <FollowerCard followers={this.state.followers} />
-        </div>
-      </div>
+        </main>
+      </Container>
     );
   }
 }
