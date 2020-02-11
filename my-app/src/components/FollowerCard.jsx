@@ -2,7 +2,7 @@ import React from "react";
 
 function FollowerCard(props) {
   return (
-    <div>
+    <div className="follower-style">
       {props.followers.map(follower => (
         <div key={follower.id}>
           <img width="200 " src={follower.avatar_url} alt="profile" />
