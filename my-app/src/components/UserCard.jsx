@@ -22,7 +22,8 @@ const useStyles = makeStyles({
   },
   cardMedia: {
     width: 200,
-    height: 200
+    height: 200,
+    borderRadius: "50%"
   }
 });
 
@@ -33,7 +34,7 @@ function UserCard(props) {
 
   return (
     <div className="user-style">
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12}>
         <CardActionArea component="a">
           <Card className={classes.card}>
             <div className={classes.cardDetails}>

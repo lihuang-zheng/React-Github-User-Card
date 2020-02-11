@@ -21,8 +21,9 @@ const useStyles = makeStyles({
     flex: 1
   },
   cardMedia: {
-    width: 200,
-    height: 200
+    width: 120,
+    height: 120,
+    borderRadius: "50%"
   }
 });
 
@@ -34,31 +35,29 @@ function FollowerCard(props) {
   return (
     <div>
       {props.followers.map(follower => (
-        <div key={follower.id} className={classes.cardBody}>
-          <Grid item xs={12} md={6}>
-            <CardActionArea component="a" href={follower.html_url}>
-              <Card className={classes.card}>
-                <div className={classes.cardDetails}>
-                  <CardContent>
-                    <Typography component="h2" variant="h5">
-                      {follower.login}
-                    </Typography>
-                    <Typography variant="subtitle1" color="primary">
-                      More info.
-                    </Typography>
-                  </CardContent>
-                </div>
+        <Grid container item xs={12} key={follower.id}>
+          <CardActionArea component="a" href={follower.html_url}>
+            <Card className={classes.card}>
+              <div className={classes.cardDetails}>
+                <CardContent>
+                  <Typography component="h2" variant="h5">
+                    {follower.login}
+                  </Typography>
+                  <Typography variant="subtitle1" color="primary">
+                    More info.
+                  </Typography>
+                </CardContent>
+              </div>
 
-                <Hidden xsDown>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image={follower.avatar_url}
-                  />
-                </Hidden>
-              </Card>
-            </CardActionArea>
-          </Grid>
-        </div>
+              <Hidden xsDown>
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={follower.avatar_url}
+                />
+              </Hidden>
+            </Card>
+          </CardActionArea>
+        </Grid>
       ))}
     </div>
   );
