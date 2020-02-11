@@ -6,15 +6,20 @@ import axios from "axios";
 class GithubUser extends React.Component {
   //use state for constructor
   state = {
-    users: []
+    users: [],
+    followers: []
   };
 
   // componentDidMount to get the axios to get data from github api
   componentDidMount() {
     axios
-      .get("https://api.github.com/users/")
+      .get("https://api.github.com/users/lihuang-zheng/followers")
       .then(res => {
         console.log(res);
+
+        this.setState({
+          users: res.data
+        });
       })
       .catch(err => console.log(err));
   }
@@ -26,7 +31,8 @@ class GithubUser extends React.Component {
 
         <div className="users">
           {this.state.users.map(user => (
-            <img width="150" src={user} key={user} alt={user} />
+            // <img width="150" src={user} key={user} alt={user} />
+            <h2>{this.state.login}</h2>
           ))}
         </div>
       </div>
