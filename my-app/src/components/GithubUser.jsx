@@ -10,7 +10,7 @@ import axios from "axios";
 class GithubUser extends React.Component {
   //use state for constructor
   state = {
-    users: [],
+    user: [],
     followers: []
   };
 
@@ -18,12 +18,12 @@ class GithubUser extends React.Component {
   componentDidMount() {
     //user axios
     axios
-      .get("https://api.github.com/users/lihuang-zheng/")
+      .get("https://api.github.com/users/lihuang-zheng")
       .then(res => {
         console.log(res);
 
         this.setState({
-          users: res.data
+          user: res.data
         });
       })
       .catch(err => console.log(err));
@@ -50,7 +50,7 @@ class GithubUser extends React.Component {
         </header>
 
         <div className="container">
-          {/* <UserCard user={this.state.user} /> */}
+          <UserCard user={this.state.user} />
           <FollowerCard followers={this.state.followers} />
         </div>
       </div>
