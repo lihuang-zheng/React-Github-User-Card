@@ -43,6 +43,9 @@ function FollowerCard(props) {
                     <Typography component="h2" variant="h5">
                       {follower.login}
                     </Typography>
+                    <Typography variant="subtitle1" color="primary">
+                      More info.
+                    </Typography>
                   </CardContent>
                 </div>
 
