@@ -5,10 +5,9 @@ function FollowerCard(props) {
     <div>
       {props.followers.map(follower => (
         <div key={follower.id}>
-          <img src={follower.img} />
-          <p>{follower.name}</p>
-          <p>{follower.location}</p>
-          <p>{follower.bio}</p>
+          <img width="200 " src={follower.avatar_url} alt="profile picture" />
+          <h2>{follower.login}</h2>
+          <a href={follower.html_url}>Follower Info</a>
         </div>
       ))}
     </div>

@@ -44,13 +44,6 @@ class GithubUser extends React.Component {
   // render user and user's follower on the page.
   render() {
     return (
-      // <div>
-      //   <h1>My Github.</h1>
-
-      //   <div className="users">
-
-      //   </div>
-      // </div>
       <div>
         <header className="Git-header">
           <h1>My Github.</h1>
